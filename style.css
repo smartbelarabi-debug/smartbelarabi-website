@@ -1265,6 +1265,84 @@ h3 {
   font-size: clamp(2.05rem, 4.2vw, 3.75rem);
 }
 
+.start-hero {
+  padding-bottom: 56px;
+}
+
+.start-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(360px, 1.18fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.start-hero-copy {
+  min-width: 0;
+}
+
+.start-hero-visual {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: var(--radius);
+  background:
+    linear-gradient(135deg, rgba(85, 214, 190, 0.08), rgba(121, 168, 255, 0.1)),
+    #071018;
+  box-shadow: 0 24px 76px rgba(0, 0, 0, 0.34);
+  isolation: isolate;
+}
+
+.start-hero-visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(5, 7, 11, 0.1), rgba(5, 7, 11, 0.26)),
+    linear-gradient(0deg, rgba(5, 7, 11, 0.22), transparent 42%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.start-hero-visual img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+.start-path-section {
+  padding-top: 52px;
+}
+
+.start-path-grid {
+  max-width: 920px;
+}
+
+.start-number-list {
+  margin-top: 0;
+}
+
+.start-number-list li {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.035)),
+    rgba(8, 14, 23, 0.74);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.16);
+}
+
+.start-number-list li::before {
+  color: #08110f;
+  background: var(--accent);
+}
+
+.start-number-list p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
 .breadcrumbs {
   color: var(--quiet);
   margin-bottom: 22px;
@@ -1406,6 +1484,7 @@ td strong {
   .hero-grid,
   .split,
   .visual-grid,
+  .start-hero-grid,
   .contact-layout {
     grid-template-columns: 1fr;
   }
@@ -1432,6 +1511,11 @@ td strong {
   .section-head {
     grid-template-columns: 1fr;
     align-items: start;
+  }
+
+  .start-hero-visual {
+    max-width: 640px;
+    margin-inline: auto;
   }
 
   .glossary-tools {
@@ -1490,6 +1574,23 @@ td strong {
 
   .product-media {
     min-height: 154px;
+  }
+
+  .start-hero {
+    padding-bottom: 44px;
+  }
+
+  .start-hero-grid {
+    gap: 28px;
+  }
+
+  .start-hero-visual img {
+    aspect-ratio: 4 / 5;
+    object-position: center top;
+  }
+
+  .start-path-section {
+    padding-top: 46px;
   }
 }
 
