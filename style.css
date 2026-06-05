@@ -646,6 +646,10 @@ h3 {
   margin-top: 14px;
 }
 
+.buy-links > div {
+  display: block;
+}
+
 .buy-link {
   display: inline-flex;
   align-items: center;
