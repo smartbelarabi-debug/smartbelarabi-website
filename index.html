@@ -1,165 +1,195 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartBelArabi | سمارت هوم بالعربي</title>
-  <meta name="description" content="SmartBelArabi is an Arabic smart home resource hub for Home Assistant, Zigbee, Wi-Fi, automation, sensors, WLED, and practical smart living." />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SmartBelArabi | سمارت هوم بالعربي، Home Assistant، Zigbee، Automation</title>
+  <meta name="description" content="SmartBelArabi منصة عربية premium لفهم وبناء سمارت هوم عملي باستخدام Home Assistant، Zigbee، Wi-Fi، Sensors، WLED، Local control، Matter، والأتمتة.">
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
   <header class="site-header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">SBA</div>
-        <div>
-          <strong>SmartBelArabi</strong>
-          <span>سمارت هوم بالعربي</span>
-        </div>
-      </div>
-
-      <nav>
-        <a href="#start">ابدأ هنا</a>
-        <a href="#videos">الفيديوهات</a>
-        <a href="#products">المنتجات</a>
-        <a href="#guides">الأدلة</a>
-        <a href="#contact">تواصل</a>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="SmartBelArabi الرئيسية">
+        <span class="brand-mark"><img src="assets/smart-bel-logo-white.png" alt="SmartBelArabi logo"></span>
+        <span class="brand-text"><strong>SmartBelArabi</strong><span>سمارت هوم بالعربي</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="pages/start-here.html">ابدأ هنا</a>
+        <a href="guides/index.html">الأدلة</a>
+        <a href="products/index.html">المنتجات</a>
+        <a href="resources/index.html">الموارد</a>
+        <a href="pages/videos.html">الفيديوهات</a>
+        <a href="pages/contact.html">تواصل</a>
       </nav>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Arabic Smart Home Resources</p>
-          <h1>سمارت هوم يفهمك، مش بس ينفذ أوامرك.</h1>
-          <p class="hero-text">
-            SmartBelArabi هو مركز عربي لمحتوى السمارت هوم، Home Assistant، Zigbee، Wi-Fi،
-            الأتمتة، الحساسات، WLED، والتحكم المحلي بطريقة عملية وهادئة.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn primary" href="#start">ابدأ من هنا</a>
-            <a class="btn secondary" href="#videos">شاهد الموارد</a>
+      <div class="section-inner hero-grid">
+        <div>
+          <span class="eyebrow">منصة عربية للسمارت هوم العملي</span>
+          <h1>سمارت هوم يفهمك، مش بس ينفذ أوامرك</h1>
+          <p class="lead">SmartBelArabi منصة عربية تساعدك تفهم وتبني سمارت هوم عملي باستخدام Home Assistant، Zigbee، Wi-Fi، الحساسات، WLED، التحكم المحلي، والأتمتة بطريقة واضحة وذكية.</p>
+          <div class="actions">
+            <a class="button primary" href="pages/start-here.html">ابدأ من هنا</a>
+            <a class="button" href="guides/index.html">استكشف الأدلة</a>
+            <a class="button ghost" href="resources/index.html">شاهد آخر الموارد</a>
           </div>
         </div>
-
-        <div class="hero-card">
-          <h2>What you will find here</h2>
-          <ul>
-            <li>مصادر مرتبطة بكل فيديو على يوتيوب</li>
-            <li>روابط Amazon و AliExpress للمنتجات</li>
-            <li>ملاحظات توافق مع Home Assistant</li>
-            <li>أدلة عملية للحساسات، Zigbee، WLED، والأتمتة</li>
-            <li>ملفات وقوالب YAML لاحقًا</li>
-          </ul>
+        <div class="device-stage" aria-hidden="true">
+          <div class="device-panel">
+            <div class="device-screen">
+              <div class="screen-top"><span>Home Assistant</span><span class="status-dot"></span></div>
+              <div class="metric"><strong>24°</strong><span>غرفة المعيشة مستقرة، الإضاءة جاهزة للمساء</span></div>
+              <div class="mini-grid">
+                <div class="mini-card"><span>Zigbee</span><strong>18 جهاز</strong></div>
+                <div class="mini-card"><span>Local control</span><strong>نشط</strong></div>
+                <div class="mini-card"><span>Motion</span><strong>هادئ</strong></div>
+                <div class="mini-card"><span>WLED</span><strong>Scene 04</strong></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="start" class="section">
-      <div class="container">
-        <p class="section-label">Start Here</p>
-        <h2>ابدأ رحلتك في السمارت هوم بطريقة صحيحة</h2>
-        <p>
-          الموقع ليس مجرد مكان لروابط المنتجات. الهدف أن يكون مرجع عربي عملي يساعدك تفهم
-          ماذا تشتري، لماذا تشتريه، وكيف تستخدمه داخل Home Assistant بشكل مفيد.
-        </p>
-      </div>
-    </section>
-
-    <section id="videos" class="section cards-section">
-      <div class="container">
-        <p class="section-label">Videos & Resources</p>
-        <h2>موارد الفيديوهات</h2>
-
-        <div class="cards">
-          <article class="card">
-            <h3>ليه أغلب أنظمة السمارت هوم بتفشل؟</h3>
-            <p>فكرة أساسية عن الفرق بين التحكم الحقيقي، التطبيقات، والصوت.</p>
-            <a href="#">قريبًا</a>
-          </article>
-
-          <article class="card">
-            <h3>الحساسات في السمارت هوم</h3>
-            <p>صفحة المنتجات والملاحظات الخاصة بفيديو الحساسات.</p>
-            <a href="#">قريبًا</a>
-          </article>
-
-          <article class="card">
-            <h3>WLED والإضاءة الذكية</h3>
-            <p>مكونات، كنترولر، شرائط LED، وأفكار للربط مع Home Assistant.</p>
-            <a href="#">قريبًا</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="products" class="section">
-      <div class="container two-column">
+    <section class="section band">
+      <div class="section-inner split">
         <div>
-          <p class="section-label">Products I Use</p>
-          <h2>المنتجات التي أستخدمها</h2>
-          <p>
-            كل صفحة منتج ستحتوي على الاسم بالعربي والإنجليزي، رابط Amazon، رابط AliExpress،
-            طريقة الاستخدام، المميزات، العيوب، وتوافق Home Assistant.
-          </p>
+          <span class="eyebrow">ما هو SmartBelArabi؟</span>
+          <h2>مرجع عربي هادئ وواضح لتصميم سمارت هوم يعتمد عليه.</h2>
         </div>
-
-        <div class="mini-list">
-          <div>Aqara Vibration Sensor</div>
-          <div>Aqara Presence Sensor FP2</div>
-          <div>Aqara Door and Window Sensor</div>
-          <div>SONOFF Zigbee Sensors</div>
+        <div>
+          <p class="section-copy">الفكرة ليست تجميع أجهزة كثيرة فقط. الهدف هو فهم المنظومة: اختيار البروتوكول المناسب، ربط الأجهزة بطريقة مستقرة، بناء automations مفيدة، والحفاظ على الخصوصية قدر الإمكان. الفيديوهات جزء من المنصة، لكن الموقع هو الوجهة الأساسية للأدلة، الموارد، المقارنات، والملفات القابلة للتحميل لاحقا.</p>
         </div>
       </div>
     </section>
 
-    <section id="guides" class="section dark-section">
-      <div class="container">
-        <p class="section-label">Home Assistant Guides</p>
-        <h2>أدلة Home Assistant</h2>
-        <p>
-          لاحقًا سيتم إضافة شروحات وقوالب جاهزة للأتمتة، إعدادات Zigbee، صفحات YAML،
-          وقوائم مراجعة تساعدك تبني نظام سمارت هوم مستقر ومفيد.
-        </p>
+    <section class="section">
+      <div class="section-inner split">
+        <div>
+          <span class="eyebrow">عن SmartBelArabi</span>
+          <h2>هوية واحدة عبر YouTube و Instagram و Facebook و TikTok.</h2>
+        </div>
+        <div>
+          <p class="section-copy">SmartBelArabi يركز على بناء سمارت هوم يعتمد على نفسه قدر الإمكان: تحكم محلي، أتمتة قوية، وحلول عملية بدون الاعتماد الكامل على التطبيقات أو السحابة. المحتوى يبدأ من التجربة اليومية: الحساسات، الفرق بين Zigbee و Wi-Fi، Home Assistant، Alexa، والأفكار التي تجعل النظام مريحا فعلا.</p>
+          <div class="social-links" aria-label="روابط SmartBelArabi الاجتماعية">
+            <a href="https://www.youtube.com/@smartbelarabi">YouTube</a>
+            <a href="https://instagram.com/smartbelarabi">Instagram</a>
+            <a href="https://www.facebook.com/smartBelArabi">Facebook</a>
+            <a href="https://www.tiktok.com/@smarthomebelarabi?_r=1&_t=ZS-96xCfoLJYSC">TikTok</a>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section class="section disclosure">
-      <div class="container">
-        <p class="section-label">Affiliate Disclosure</p>
-        <h2>إفصاح الروابط التسويقية</h2>
-        <p>
-          بعض الروابط على هذا الموقع قد تكون روابط تسويقية. عند الشراء من خلالها قد أحصل على عمولة صغيرة
-          بدون أي تكلفة إضافية عليك. هذا يساعد في دعم محتوى SmartBelArabi.
-        </p>
-        <p>
-          Some links on this website may be affiliate links. If you buy through them, I may earn a small commission
-          at no extra cost to you.
-        </p>
+    <section class="section band">
+      <div class="section-inner">
+        <span class="eyebrow">ابدأ هنا</span>
+        <h2>مسار تعلم واضح من أول جهاز إلى نظام متماسك.</h2>
+        <ol class="number-list">
+          <li><div><h3>افهم الأساسيات</h3><p>ما الفرق بين Home Assistant، Zigbee، Wi-Fi، Matter، والتحكم المحلي؟</p></div></li>
+          <li><div><h3>اختر الأجهزة بعقلانية</h3><p>اعرف أين تستخدم الحساسات، المفاتيح، وحدات الإضاءة، وأجهزة WLED بدون شراء عشوائي.</p></div></li>
+          <li><div><h3>ابن automations تخدمك</h3><p>حوّل الحركة، الوقت، الحرارة، والحضور إلى سيناريوهات عملية ومريحة.</p></div></li>
+        </ol>
       </div>
     </section>
 
-    <section id="contact" class="section contact">
-      <div class="container">
-        <p class="section-label">Contact</p>
-        <h2>للتواصل والتعاون</h2>
-        <p>
-          للتعاون، الرعايات، أو إرسال منتجات للمراجعة، سيتم إضافة بريد التواصل الرسمي قريبًا:
-        </p>
-        <strong>contact@smartbelarabi.com</strong>
+    <section class="section">
+      <div class="section-inner">
+        <span class="eyebrow">المحاور الأساسية</span>
+        <h2>كل ما تحتاجه لبناء سمارت هوم أذكى وأكثر استقرارا.</h2>
+        <div class="card-grid">
+          <article class="card"><div class="icon">HA</div><h3>Home Assistant</h3><p>شرح الإعدادات، التكاملات، dashboards، automations، والربط المحلي.</p></article>
+          <article class="card"><div class="icon">Z</div><h3>Zigbee vs Wi-Fi</h3><p>متى تختار Zigbee، ومتى يكون Wi-Fi خيارا منطقيا، وكيف تفكر في الاستقرار.</p></article>
+          <article class="card"><div class="icon">S</div><h3>Sensors</h3><p>حساسات حركة، أبواب، حرارة، رطوبة، حضور، اهتزاز، ودخان مع ملاحظات استخدام فعلية.</p></article>
+          <article class="card"><div class="icon">A</div><h3>Automation</h3><p>أفكار عملية تجعل السمارت هوم يعمل بهدوء في الخلفية بدون إزعاج.</p></article>
+          <article class="card"><div class="icon">W</div><h3>WLED</h3><p>إضاءة ذكية، scenes، مؤثرات، وربطها مع Home Assistant.</p></article>
+          <article class="card"><div class="icon">L</div><h3>Local control</h3><p>منظومات أكثر خصوصية وأقل اعتمادا على السحابة كلما كان ذلك ممكنا.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="section-inner split">
+        <div>
+          <span class="eyebrow">الأدلة والموارد</span>
+          <h2>محتوى عملي يمكن الرجوع له وقت التخطيط والتركيب.</h2>
+          <p class="section-copy">ستجد لاحقا أدلة تفصيلية، قوالب YAML، قوائم فحص، مقارنات منتجات، وروابط فيديوهات مرتبطة بكل موضوع.</p>
+        </div>
+        <div class="resource-list">
+          <a class="resource-row" href="resources/sensors.html"><div><h3>دليل حساسات السمارت هوم</h3><span>Sensor list, Home Assistant compatibility, Zigbee and Wi-Fi notes</span></div><span class="placeholder-link">افتح</span></a>
+          <a class="resource-row" href="resources/glossary.html"><div><h3>قاموس السمارت هوم للمبتدئين</h3><span>Smart Home Glossary, Home Assistant, Zigbee, Matter, Automation</span></div><span class="placeholder-link">ابدأ</span></a>
+          <a class="resource-row" href="guides/index.html"><div><h3>أدلة Home Assistant</h3><span>مسارات تعليمية ومقالات عملية قيد البناء</span></div><span class="placeholder-link">استكشف</span></a>
+          <a class="resource-row" href="downloads/index.html"><div><h3>Downloads</h3><span>YAML files, checklists, templates coming soon</span></div><span class="placeholder-link">قريبا</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner">
+        <span class="eyebrow">معرفة المنتجات</span>
+        <h2>توصيات بدون ضجيج وبدون شكل affiliate blog.</h2>
+        <p class="section-copy">صفحات المنتجات ستبنى حول الاستخدام الحقيقي: ما هو المنتج، أين تستخدمه، هل يعمل مع Home Assistant، ما نوع الاتصال، المميزات، العيوب، من يناسبه، ومن الأفضل أن يتجنبه.</p>
+        <div class="tag-row">
+          <span class="tag">Use cases</span>
+          <span class="tag">Pros and cons</span>
+          <span class="tag">Home Assistant</span>
+          <span class="tag">Related automations</span>
+          <span class="tag">Amazon</span>
+          <span class="tag">AliExpress</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="section-inner">
+        <span class="eyebrow">Videos & Resources</span>
+        <h2>من أحدث فيديوهات SmartBelArabi.</h2>
+        <p class="section-copy">هذا القسم يعرض موضوعات منشورة فعلا على القناة، حتى يبقى الموقع متصل بالمحتوى الحقيقي وليس وعودا عامة.</p>
+        <div class="video-grid">
+          <article class="video-card">
+            <img src="https://i.ytimg.com/vi/VCcr8wxcW9g/hqdefault.jpg" alt="سنسورز الـ 10$: القطع الأساسية في السمارت هوم">
+            <div class="video-body"><div class="meta-line"><span class="tag">Sensors</span><span>من القناة</span></div><h3>سنسورز الـ 10$: القطع الأساسية في السمارت هوم</h3><p>حساسات بسيطة يمكن أن تكون أساس automations مفيدة.</p><a class="placeholder-link" href="https://www.youtube.com/watch?v=VCcr8wxcW9g">شاهد على YouTube</a></div>
+          </article>
+          <article class="video-card">
+            <img src="https://i.ytimg.com/vi/bqCfHTA_Wx0/hqdefault.jpg" alt="أوتوميشنز بسيطة غيرت حياتي في السمارت هوم">
+            <div class="video-body"><div class="meta-line"><span class="tag">Automation</span><span>من القناة</span></div><h3>أوتوميشنز بسيطة غيرت حياتي في السمارت هوم</h3><p>أفكار عملية تجعل النظام يعمل بهدوء في الخلفية.</p><a class="placeholder-link" href="https://www.youtube.com/watch?v=bqCfHTA_Wx0">شاهد على YouTube</a></div>
+          </article>
+          <article class="video-card">
+            <img src="https://i.ytimg.com/vi/kyB3GU2MaBA/hqdefault.jpg" alt="الفرق الحقيقي بين Zigbee و Wi-Fi في السمارت هوم">
+            <div class="video-body"><div class="meta-line"><span class="tag">Zigbee vs Wi-Fi</span><span>من القناة</span></div><h3>الفرق الحقيقي بين Zigbee و Wi-Fi في السمارت هوم</h3><p>متى تختار Zigbee ومتى يكون Wi-Fi مناسبا.</p><a class="placeholder-link" href="https://www.youtube.com/watch?v=kyB3GU2MaBA">شاهد على YouTube</a></div>
+          </article>
+        </div>
+        <div class="actions"><a class="button" href="pages/videos.html">افتح كل الفيديوهات</a></div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-inner notice">
+        <h2>تنويه الروابط التسويقية</h2>
+        <p>بعض الروابط على هذا الموقع قد تكون روابط تسويقية. عند الشراء من خلالها قد أحصل على عمولة صغيرة بدون أي تكلفة إضافية عليك. هذا يساعد في دعم محتوى SmartBelArabi.</p>
+        <p lang="en" dir="ltr">Some links on this website may be affiliate links. If you buy through them, I may earn a small commission at no extra cost to you. This helps support SmartBelArabi content.</p>
+        <a class="placeholder-link" href="pages/affiliate-disclosure.html">اقرأ الإفصاح الكامل</a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© 2026 SmartBelArabi. All rights reserved.</p>
-      <p>Arabic smart home content, Home Assistant, automation, sensors, and practical smart living.</p>
+    <div class="section-inner footer-grid">
+      <div><strong>SmartBelArabi</strong><br><span>سمارت هوم بالعربي</span></div>
+      <div class="social-icon-links" aria-label="روابط SmartBelArabi الاجتماعية">
+        <a class="social-icon" href="https://www.youtube.com/@smartbelarabi" aria-label="YouTube">YT</a>
+        <a class="social-icon" href="https://instagram.com/smartbelarabi" aria-label="Instagram">IG</a>
+        <a class="social-icon" href="https://www.facebook.com/smartBelArabi" aria-label="Facebook">FB</a>
+        <a class="social-icon" href="https://www.tiktok.com/@smarthomebelarabi?_r=1&_t=ZS-96xCfoLJYSC" aria-label="TikTok">TT</a>
+      </div>
+      <div class="footer-links"><a href="pages/affiliate-disclosure.html">Affiliate Disclosure</a><a href="pages/contact.html">تواصل</a></div>
     </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

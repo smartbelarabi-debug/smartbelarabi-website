@@ -1,165 +1,981 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartBelArabi | سمارت هوم بالعربي</title>
-  <meta name="description" content="SmartBelArabi is an Arabic smart home resource hub for Home Assistant, Zigbee, Wi-Fi, automation, sensors, WLED, and practical smart living." />
-  <link rel="stylesheet" href="style.css" />
-</head>
+:root {
+  color-scheme: dark;
+  --bg: #05070b;
+  --bg-soft: #0b1118;
+  --panel: rgba(255, 255, 255, 0.07);
+  --panel-strong: rgba(255, 255, 255, 0.11);
+  --text: #f4f7fb;
+  --muted: #aeb9c8;
+  --quiet: #778396;
+  --line: rgba(255, 255, 255, 0.14);
+  --accent: #55d6be;
+  --accent-2: #79a8ff;
+  --accent-3: #ffd166;
+  --shadow: 0 24px 80px rgba(0, 0, 0, 0.38);
+  --radius: 8px;
+  --max: 1160px;
+  font-family: "IBM Plex Sans Arabic", "Noto Sans Arabic", "Segoe UI", Tahoma, Arial, sans-serif;
+}
 
-<body>
-  <header class="site-header">
-    <div class="container nav">
-      <div class="brand">
-        <div class="logo">SBA</div>
-        <div>
-          <strong>SmartBelArabi</strong>
-          <span>سمارت هوم بالعربي</span>
-        </div>
-      </div>
+* {
+  box-sizing: border-box;
+}
 
-      <nav>
-        <a href="#start">ابدأ هنا</a>
-        <a href="#videos">الفيديوهات</a>
-        <a href="#products">المنتجات</a>
-        <a href="#guides">الأدلة</a>
-        <a href="#contact">تواصل</a>
-      </nav>
-    </div>
-  </header>
+html {
+  scroll-behavior: smooth;
+}
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <p class="eyebrow">Arabic Smart Home Resources</p>
-          <h1>سمارت هوم يفهمك، مش بس ينفذ أوامرك.</h1>
-          <p class="hero-text">
-            SmartBelArabi هو مركز عربي لمحتوى السمارت هوم، Home Assistant، Zigbee، Wi-Fi،
-            الأتمتة، الحساسات، WLED، والتحكم المحلي بطريقة عملية وهادئة.
-          </p>
+body {
+  margin: 0;
+  direction: rtl;
+  background:
+    radial-gradient(circle at 18% 8%, rgba(85, 214, 190, 0.14), transparent 34rem),
+    radial-gradient(circle at 84% 18%, rgba(121, 168, 255, 0.14), transparent 32rem),
+    linear-gradient(180deg, #05070b 0%, #071019 46%, #05070b 100%);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.75;
+  overflow-x: hidden;
+}
 
-          <div class="hero-actions">
-            <a class="btn primary" href="#start">ابدأ من هنا</a>
-            <a class="btn secondary" href="#videos">شاهد الموارد</a>
-          </div>
-        </div>
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-        <div class="hero-card">
-          <h2>What you will find here</h2>
-          <ul>
-            <li>مصادر مرتبطة بكل فيديو على يوتيوب</li>
-            <li>روابط Amazon و AliExpress للمنتجات</li>
-            <li>ملاحظات توافق مع Home Assistant</li>
-            <li>أدلة عملية للحساسات، Zigbee، WLED، والأتمتة</li>
-            <li>ملفات وقوالب YAML لاحقًا</li>
-          </ul>
-        </div>
-      </div>
-    </section>
+img,
+svg {
+  max-width: 100%;
+}
 
-    <section id="start" class="section">
-      <div class="container">
-        <p class="section-label">Start Here</p>
-        <h2>ابدأ رحلتك في السمارت هوم بطريقة صحيحة</h2>
-        <p>
-          الموقع ليس مجرد مكان لروابط المنتجات. الهدف أن يكون مرجع عربي عملي يساعدك تفهم
-          ماذا تشتري، لماذا تشتريه، وكيف تستخدمه داخل Home Assistant بشكل مفيد.
-        </p>
-      </div>
-    </section>
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(5, 7, 11, 0.74);
+  backdrop-filter: blur(20px);
+  transition: background 220ms ease, border-color 220ms ease;
+}
 
-    <section id="videos" class="section cards-section">
-      <div class="container">
-        <p class="section-label">Videos & Resources</p>
-        <h2>موارد الفيديوهات</h2>
+.site-header.is-scrolled {
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(5, 7, 11, 0.88);
+}
 
-        <div class="cards">
-          <article class="card">
-            <h3>ليه أغلب أنظمة السمارت هوم بتفشل؟</h3>
-            <p>فكرة أساسية عن الفرق بين التحكم الحقيقي، التطبيقات، والصوت.</p>
-            <a href="#">قريبًا</a>
-          </article>
+.nav-shell,
+.section-inner {
+  width: min(var(--max), calc(100% - 40px));
+  margin-inline: auto;
+}
 
-          <article class="card">
-            <h3>الحساسات في السمارت هوم</h3>
-            <p>صفحة المنتجات والملاحظات الخاصة بفيديو الحساسات.</p>
-            <a href="#">قريبًا</a>
-          </article>
+.nav-shell {
+  min-height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+}
 
-          <article class="card">
-            <h3>WLED والإضاءة الذكية</h3>
-            <p>مكونات، كنترولر، شرائط LED، وأفكار للربط مع Home Assistant.</p>
-            <a href="#">قريبًا</a>
-          </article>
-        </div>
-      </div>
-    </section>
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: max-content;
+}
 
-    <section id="products" class="section">
-      <div class="container two-column">
-        <div>
-          <p class="section-label">Products I Use</p>
-          <h2>المنتجات التي أستخدمها</h2>
-          <p>
-            كل صفحة منتج ستحتوي على الاسم بالعربي والإنجليزي، رابط Amazon، رابط AliExpress،
-            طريقة الاستخدام، المميزات، العيوب، وتوافق Home Assistant.
-          </p>
-        </div>
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16);
+  overflow: hidden;
+}
 
-        <div class="mini-list">
-          <div>Aqara Vibration Sensor</div>
-          <div>Aqara Presence Sensor FP2</div>
-          <div>Aqara Door and Window Sensor</div>
-          <div>SONOFF Zigbee Sensors</div>
-        </div>
-      </div>
-    </section>
+.brand-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
-    <section id="guides" class="section dark-section">
-      <div class="container">
-        <p class="section-label">Home Assistant Guides</p>
-        <h2>أدلة Home Assistant</h2>
-        <p>
-          لاحقًا سيتم إضافة شروحات وقوالب جاهزة للأتمتة، إعدادات Zigbee، صفحات YAML،
-          وقوائم مراجعة تساعدك تبني نظام سمارت هوم مستقر ومفيد.
-        </p>
-      </div>
-    </section>
+.brand-text strong {
+  display: block;
+  font-size: 1rem;
+  line-height: 1.2;
+}
 
-    <section class="section disclosure">
-      <div class="container">
-        <p class="section-label">Affiliate Disclosure</p>
-        <h2>إفصاح الروابط التسويقية</h2>
-        <p>
-          بعض الروابط على هذا الموقع قد تكون روابط تسويقية. عند الشراء من خلالها قد أحصل على عمولة صغيرة
-          بدون أي تكلفة إضافية عليك. هذا يساعد في دعم محتوى SmartBelArabi.
-        </p>
-        <p>
-          Some links on this website may be affiliate links. If you buy through them, I may earn a small commission
-          at no extra cost to you.
-        </p>
-      </div>
-    </section>
+.brand-text span {
+  display: block;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
 
-    <section id="contact" class="section contact">
-      <div class="container">
-        <p class="section-label">Contact</p>
-        <h2>للتواصل والتعاون</h2>
-        <p>
-          للتعاون، الرعايات، أو إرسال منتجات للمراجعة، سيتم إضافة بريد التواصل الرسمي قريبًا:
-        </p>
-        <strong>contact@smartbelarabi.com</strong>
-      </div>
-    </section>
-  </main>
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <p>© 2026 SmartBelArabi. All rights reserved.</p>
-      <p>Arabic smart home content, Home Assistant, automation, sensors, and practical smart living.</p>
-    </div>
-  </footer>
-</body>
-</html>
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.94rem;
+  padding: 10px 12px;
+  border-radius: 999px;
+  transition: color 180ms ease, background 180ms ease, transform 180ms ease;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible,
+.nav-links a[aria-current="page"] {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.nav-links a:hover,
+.nav-links a:focus-visible {
+  transform: translateY(-1px);
+}
+
+.menu-toggle {
+  display: none;
+  width: 42px;
+  height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 4px auto;
+  background: currentColor;
+  border-radius: 2px;
+}
+
+.hero {
+  position: relative;
+  min-height: calc(100vh - 76px);
+  display: grid;
+  align-items: center;
+  padding: 82px 0 54px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+  align-items: center;
+  gap: 58px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  background: rgba(85, 214, 190, 0.09);
+  border: 1px solid rgba(85, 214, 190, 0.22);
+  border-radius: 999px;
+  padding: 7px 13px;
+  font-size: 0.86rem;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 850px;
+  margin-bottom: 24px;
+  font-size: clamp(3rem, 6.1vw, 5.55rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+h2 {
+  margin-bottom: 18px;
+  font-size: clamp(2rem, 4.2vw, 4rem);
+  line-height: 1.14;
+  letter-spacing: 0;
+}
+
+h3 {
+  margin-bottom: 10px;
+  font-size: 1.28rem;
+  line-height: 1.35;
+}
+
+.lead {
+  max-width: 760px;
+  color: #d5deea;
+  font-size: clamp(1.08rem, 2vw, 1.35rem);
+}
+
+.section-copy {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.08);
+  font-weight: 700;
+  transition: transform 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.13);
+  outline: none;
+}
+
+.button.primary {
+  color: #06100f;
+  border-color: transparent;
+  background: linear-gradient(135deg, var(--accent), #b7fff1);
+}
+
+.button.ghost {
+  color: #dce8f4;
+}
+
+.device-stage {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  place-items: center;
+}
+
+.device-panel {
+  width: min(420px, 100%);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 28px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(8, 14, 23, 0.82);
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.device-screen {
+  border-radius: 22px;
+  background:
+    linear-gradient(160deg, rgba(85, 214, 190, 0.24), rgba(121, 168, 255, 0.1) 44%, rgba(255, 209, 102, 0.08)),
+    #071017;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  padding: 24px;
+}
+
+.screen-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 24px rgba(85, 214, 190, 0.9);
+}
+
+.metric {
+  margin: 40px 0 22px;
+}
+
+.metric strong {
+  display: block;
+  font-size: 4.5rem;
+  line-height: 1;
+}
+
+.metric span {
+  color: var(--muted);
+}
+
+.mini-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.mini-card {
+  min-height: 104px;
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mini-card span {
+  display: block;
+  color: var(--quiet);
+  font-size: 0.82rem;
+}
+
+.mini-card strong {
+  display: block;
+  margin-top: 12px;
+  font-size: 1.2rem;
+}
+
+.section {
+  padding: 90px 0;
+}
+
+.section.compact {
+  padding: 58px 0;
+}
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 42px;
+  align-items: start;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.card,
+.wide-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 24px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+}
+
+.card p,
+.wide-card p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.video-grid,
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.video-card,
+.product-card {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+}
+
+.video-card img,
+.product-card img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  background: #101820;
+}
+
+.video-body,
+.product-body {
+  padding: 20px;
+}
+
+.video-body p,
+.product-body p {
+  color: var(--muted);
+}
+
+.meta-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  color: var(--quiet);
+  font-size: 0.86rem;
+}
+
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 9px 13px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: #dce8f4;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.social-icon-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  display: inline-grid;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #dce8f4;
+  font-size: 0.76rem;
+  font-weight: 800;
+  transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+}
+
+.social-icon:hover,
+.social-icon:focus-visible {
+  transform: translateY(-2px);
+  color: #06100f;
+  background: linear-gradient(135deg, var(--accent), #b7fff1);
+  outline: none;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(320px, 1.1fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.contact-form {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 24px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  color: #dce8f4;
+  font-weight: 700;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  padding: 11px 14px;
+  font: inherit;
+}
+
+.field textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid rgba(85, 214, 190, 0.34);
+  outline-offset: 2px;
+}
+
+.form-note {
+  margin: 14px 0 0;
+  color: var(--quiet);
+  font-size: 0.9rem;
+}
+
+.glossary-tools {
+  display: grid;
+  grid-template-columns: minmax(260px, 420px) 1fr auto;
+  gap: 12px;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.search-field {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.07);
+  color: var(--text);
+  padding: 10px 18px;
+  font: inherit;
+}
+
+.search-field::placeholder {
+  color: var(--quiet);
+}
+
+.search-field:focus {
+  outline: 2px solid rgba(85, 214, 190, 0.34);
+  outline-offset: 2px;
+}
+
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.filter-chip {
+  min-height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.055);
+  color: var(--muted);
+  padding: 8px 12px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-chip:hover,
+.filter-chip:focus-visible,
+.filter-chip.is-active {
+  color: #06100f;
+  background: linear-gradient(135deg, var(--accent), #b7fff1);
+  border-color: transparent;
+  outline: none;
+}
+
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 34px;
+}
+
+.glossary-results {
+  margin-top: 16px;
+}
+
+.glossary-category {
+  margin-top: 48px;
+}
+
+.glossary-category h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+}
+
+.glossary-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--panel);
+  padding: 22px;
+}
+
+.glossary-card h3 {
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.english-term {
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  text-align: right;
+}
+
+.term-example {
+  margin-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 14px;
+  color: #cbd6e4;
+  font-size: 0.95rem;
+}
+
+.term-example strong {
+  color: var(--text);
+}
+
+.icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  margin-bottom: 18px;
+  color: var(--accent);
+  background: rgba(85, 214, 190, 0.1);
+  border: 1px solid rgba(85, 214, 190, 0.22);
+}
+
+.number-list {
+  counter-reset: step;
+  display: grid;
+  gap: 14px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.number-list li {
+  counter-increment: step;
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 14px;
+  align-items: start;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.number-list li::before {
+  content: counter(step);
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(121, 168, 255, 0.14);
+  color: #bcd1ff;
+  font-weight: 800;
+}
+
+.band {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.015));
+}
+
+.resource-list {
+  display: grid;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.resource-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 18px;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.055);
+}
+
+.resource-row span,
+.tag,
+.small {
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tag {
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.page-hero {
+  padding: 82px 0 48px;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.7rem, 5.8vw, 5.6rem);
+}
+
+.breadcrumbs {
+  color: var(--quiet);
+  margin-bottom: 22px;
+  font-size: 0.92rem;
+}
+
+.breadcrumbs a {
+  color: #c4d0df;
+}
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(255, 255, 255, 0.045);
+}
+
+table {
+  width: 100%;
+  min-width: 980px;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: right;
+  vertical-align: top;
+}
+
+th {
+  color: #e9f3ff;
+  font-size: 0.92rem;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+td {
+  color: var(--muted);
+}
+
+td strong {
+  color: var(--text);
+}
+
+.placeholder-link {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.video-frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(85, 214, 190, 0.18), rgba(121, 168, 255, 0.1)),
+    #080e17;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 28px;
+}
+
+.video-frame p {
+  color: #dce7f3;
+  margin: 0;
+}
+
+.video-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.notice {
+  border: 1px solid rgba(255, 209, 102, 0.28);
+  border-radius: var(--radius);
+  background: rgba(255, 209, 102, 0.08);
+  padding: 22px;
+}
+
+.notice p:last-child {
+  margin-bottom: 0;
+}
+
+.site-footer {
+  padding: 44px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--muted);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  gap: 18px;
+  align-items: center;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.footer-links a {
+  color: #c9d5e5;
+}
+
+@media (max-width: 920px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    inset: 76px 20px auto 20px;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(5, 7, 11, 0.96);
+    box-shadow: var(--shadow);
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    border-radius: 12px;
+  }
+
+  .hero-grid,
+  .split,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    min-height: auto;
+  }
+
+  .device-stage {
+    min-height: auto;
+  }
+
+  .card-grid,
+  .video-grid,
+  .product-grid,
+  .glossary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .glossary-tools {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .nav-shell,
+  .section-inner {
+    width: min(100% - 28px, var(--max));
+  }
+
+  .brand-text span {
+    display: none;
+  }
+
+  .hero,
+  .section {
+    padding: 62px 0;
+  }
+
+  h1 {
+    font-size: clamp(2.65rem, 14vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 9vw, 3rem);
+  }
+
+  .lead {
+    font-size: 1.05rem;
+  }
+
+  .actions,
+  .resource-row,
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .card-grid,
+  .video-grid,
+  .product-grid,
+  .glossary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .device-panel {
+    border-radius: 22px;
+    padding: 14px;
+  }
+
+  .device-screen {
+    padding: 18px;
+  }
+
+  .metric strong {
+    font-size: 3.5rem;
+  }
+}

@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>حساسات سمارت هوم | SmartBelArabi Sensors, Zigbee, Home Assistant</title>
+  <meta name="description" content="دليل حساسات سمارت هوم بالعربي: Aqara، SONOFF، Mi، smoke sensor، توافق Home Assistant، Zigbee، Wi-Fi، Matter، وروابط Amazon و AliExpress.">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="brand" href="../index.html"><span class="brand-mark"><img src="../assets/smart-bel-logo-white.png" alt="SmartBelArabi logo"></span><span class="brand-text"><strong>SmartBelArabi</strong><span>سمارت هوم بالعربي</span></span></a>
+      <button class="menu-toggle" type="button" aria-label="فتح القائمة" aria-expanded="false"><span></span><span></span><span></span></button>
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="../pages/start-here.html">ابدأ هنا</a>
+        <a href="../guides/index.html">الأدلة</a>
+        <a href="../products/index.html">المنتجات</a>
+        <a href="../resources/index.html" aria-current="page">الموارد</a>
+        <a href="../pages/videos.html">الفيديوهات</a>
+        <a href="../pages/contact.html">تواصل</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="section-inner">
+        <div class="breadcrumbs"><a href="../index.html">الرئيسية</a> / <a href="index.html">الموارد</a> / الحساسات</div>
+        <span class="eyebrow">Sensors Resource</span>
+        <h1>حساسات السمارت هوم التي تبني عليها automations مفيدة.</h1>
+        <p class="lead">هذه الصفحة مرجع عملي للحساسات المذكورة في محتوى SmartBelArabi، مع ملاحظات استخدام، توافق Home Assistant، ونوع الاتصال مثل Zigbee، Wi-Fi، Matter، أو Bluetooth.</p>
+        <p class="section-copy" lang="en" dir="ltr">A practical Arabic and English sensor resource for smart home users looking for Home Assistant compatibility, reliable automations, and clear buying notes.</p>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-inner split">
+        <div class="video-frame">
+          <iframe src="https://www.youtube.com/embed/VCcr8wxcW9g" title="سنسورز الـ 10$: القطع الأساسية في السمارت هوم" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div>
+          <h2>كيف تستخدم هذه الصفحة؟</h2>
+          <p class="section-copy">استخدم الجدول كقائمة مرجعية عند اختيار حساس جديد. الروابط الحالية placeholders إلى أن يتم إضافة روابط Amazon و AliExpress النهائية. الأفضل دائما أن تختار الحساس حسب المكان، البروتوكول، التوافق، والسيناريو الذي تريد بناءه.</p>
+          <div class="tag-row">
+            <span class="tag">Home Assistant compatibility</span>
+            <span class="tag">Zigbee notes</span>
+            <span class="tag">Wi-Fi notes</span>
+            <span class="tag">Related automations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section band">
+      <div class="section-inner">
+        <h2>جدول الحساسات</h2>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>الحساس</th>
+                <th>English name</th>
+                <th>الاتصال</th>
+                <th>Home Assistant</th>
+                <th>أين استخدمه؟</th>
+                <th>ملاحظات</th>
+                <th>Amazon</th>
+                <th>AliExpress</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>حساس اهتزاز Aqara</strong></td>
+                <td>Aqara Vibration Sensor</td>
+                <td>Zigbee</td>
+                <td>عادة يعمل عبر ZHA أو Zigbee2MQTT حسب المنسق والدعم.</td>
+                <td>الأدراج، الغسالة، الأبواب الحساسة، أو أي مكان يحتاج تنبيه حركة غير تقليدي.</td>
+                <td>مفيد للسيناريوهات الدقيقة، لكنه يحتاج تجربة حساسية مناسبة للمكان.</td>
+                <td><a class="placeholder-link" href="#">Amazon link</a></td>
+                <td><a class="placeholder-link" href="#">AliExpress link</a></td>
+              </tr>
+              <tr>
+                <td><strong>حساس حضور Aqara FP2</strong></td>
+                <td>Aqara Presence Sensor FP2</td>
+                <td>Wi-Fi</td>
+                <td>يمكن دمجه حسب الطريقة المتاحة والتكامل المستخدم.</td>
+                <td>غرفة المعيشة، المكتب، أو الأماكن التي تحتاج presence أدق من motion.</td>
+                <td>ممتاز للحضور الثابت، لكنه يحتاج ضبط مناطق ومكان تركيب مدروس.</td>
+                <td><a class="placeholder-link" href="#">Amazon link</a></td>
+                <td><a class="placeholder-link" href="#">AliExpress link</a></td>
+              </tr>
+              <tr>
+                <td><strong>حساس باب ونافذة Aqara</strong></td>
+                <td>Aqara Door and Window Sensor</td>
+                <td>Zigbee</td>
+                <td>مناسب غالبا مع Home Assistant عبر Zigbee coordinator.</td>
+                <td>الأبواب، النوافذ، خزائن الأجهزة، وأبواب التخزين.</td>
+                <td>حساس أساسي لأي سمارت هوم، ومفيد في التنبيهات والأتمتة.</td>
+                <td><a class="placeholder-link" href="#">Amazon link</a></td>
+                <td><a class="placeholder-link" href="#">AliExpress link</a></td>
+              </tr>
+              <tr>
+                <td><strong>شاشة حرارة ورطوبة Mi</strong></td>
+                <td>Mi Temperature and Humidity Monitor</td>
+                <td>Bluetooth أو Bluetooth proxy حسب النسخة والإعداد</td>
+                <td>يعتمد على النسخة وطريقة الربط المتاحة في Home Assistant.</td>
+                <td>غرف النوم، المكتب، غرف الأطفال، أو متابعة الرطوبة.</td>
+                <td>مناسبة للقراءة البصرية، وقد تحتاج إعدادات إضافية للربط المحلي.</td>
+                <td><a class="placeholder-link" href="#">Amazon link</a></td>
+                <td><a class="placeholder-link" href="#">AliExpress link</a></td>
+              </tr>
+              <tr>
+                <td><strong>حساس باب ونافذة SONOFF</strong></td>
+                <td>SONOFF SNZB-04 ZigBee Wireless Door Window Sensor</td>
+                <td>Zigbee</td>
+                <td>يستخدم غالبا مع ZHA أو Zigbee2MQTT.</td>
+                <td>الأبواب والنوافذ عند الحاجة لخيار اقتصادي وبسيط.</td>
+                <td>جيد كبداية، تحقق من التوافق مع الشبكة والمنسق المستخدم.</td>
+                <td><a class="placeholder-link" href="#">Amazon link</a></td>
+                <td><a class="placeholder-link" href="#">AliExpress link</a></td>
+              </tr>
+              <tr>
+                <td><strong>حساس حركة SONOFF</strong></td>
+                <td>SONOFF SNZB-03 Motion Sensor</td>
+                <td>Zigbee</td>
+                <td>مناسب غالبا مع Home Assistant عبر Zigbee.</td>
+                <td>الممرات، الحمامات، الإضاءة التلقائية، والتنبيهات.</td>
+                <td>مفيد للحركة السريعة، لكنه لا يساوي presence sensor للحضور الثابت.</td>
+                <td><a class="placeholder-link" href="#">Amazon link</a></td>
+                <td><a class="placeholder-link" href="#">AliExpress link</a></td>
+              </tr>
+              <tr>
+                <td><strong>حساس دخان</strong></td>
+                <td>Smoke sensor</td>
+                <td>Zigbee أو Wi-Fi حسب الموديل</td>
+                <td>يعتمد بالكامل على الموديل والتكامل.</td>
+                <td>المطبخ، الممر، قرب غرف النوم، أو الأماكن المناسبة حسب تعليمات السلامة.</td>
+                <td>لا تعتمد على التكامل الذكي وحده في السلامة. اختر منتجا موثوقا واتبع تعليمات التركيب.</td>
+                <td><a class="placeholder-link" href="#">Amazon link</a></td>
+                <td><a class="placeholder-link" href="#">AliExpress link</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-inner card-grid">
+        <article class="card"><h3>Related guides</h3><p>سيتم ربط أدلة Zigbee، Bluetooth proxy، وHome Assistant sensors هنا عند نشرها.</p></article>
+        <article class="card"><h3>Related videos</h3><p>سيتم ربط فيديوهات SmartBelArabi الخاصة بالحساسات، الحضور، الحركة، والأتمتة.</p></article>
+        <article class="card"><h3>Related automations</h3><p>أمثلة قادمة: إضاءة تلقائية، تنبيه باب، متابعة حرارة ورطوبة، وتنبيه دخان.</p></article>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="section-inner notice">
+        <h2>Affiliate disclosure</h2>
+        <p>بعض الروابط على هذا الموقع قد تكون روابط تسويقية. عند الشراء من خلالها قد أحصل على عمولة صغيرة بدون أي تكلفة إضافية عليك. هذا يساعد في دعم محتوى SmartBelArabi.</p>
+        <p lang="en" dir="ltr">Some links on this website may be affiliate links. If you buy through them, I may earn a small commission at no extra cost to you. This helps support SmartBelArabi content.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="section-inner footer-grid">
+      <div><strong>SmartBelArabi</strong><br><span>سمارت هوم بالعربي</span></div>
+      <div class="social-icon-links" aria-label="روابط SmartBelArabi الاجتماعية">
+        <a class="social-icon" href="https://www.youtube.com/@smartbelarabi" aria-label="YouTube">YT</a>
+        <a class="social-icon" href="https://instagram.com/smartbelarabi" aria-label="Instagram">IG</a>
+        <a class="social-icon" href="https://www.facebook.com/smartBelArabi" aria-label="Facebook">FB</a>
+        <a class="social-icon" href="https://www.tiktok.com/@smarthomebelarabi?_r=1&_t=ZS-96xCfoLJYSC" aria-label="TikTok">TT</a>
+      </div>
+      <div class="footer-links"><a href="../pages/affiliate-disclosure.html">Affiliate Disclosure</a><a href="../pages/contact.html">تواصل</a></div>
+    </div>
+  </footer>
+  <script src="../script.js"></script>
+</body>
+</html>
