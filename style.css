@@ -541,6 +541,17 @@ h3 {
   position: relative;
 }
 
+.diagram-card {
+  border-color: rgba(85, 214, 190, 0.36);
+  background: linear-gradient(180deg, rgba(85, 214, 190, 0.08), rgba(255, 255, 255, 0.045));
+}
+
+.diagram-card img {
+  object-fit: contain;
+  padding: 10px;
+  background: #f6f8fa;
+}
+
 .product-card::before {
   content: "";
   display: block;
